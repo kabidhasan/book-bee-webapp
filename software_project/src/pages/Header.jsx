@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "../../components/ui/Button";
+import Button from "/src/components/ui/Button";
 function Header() {
 	return (
 		<div className='flex justify-between items-center bg-gradient-to-t from-pri to-teal-800 px-24 pt-4 h-full'>
