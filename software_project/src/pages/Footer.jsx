@@ -1,12 +1,12 @@
 function Footer() {
 	return (
-		<footer className='footer p-10 pt-32 bg-gradient-to-b from-blue-gray-900 to-teal-900 text-neutral-content'>
+		<footer className='footer pl-32 pb-10 bg-gradient-to-b from-pri to-teal-800 ext-neutral-content'>
 			<aside>
 				<img src='/book.png' height={50} width={50} />
 				<p>
 					CSE SUST
 					<br />
-					Kabid, Ataur, Nazif and Mehedi.
+					Kabid, Ataur, Nazif & Mehedi.
 				</p>
 			</aside>
 			<nav className='pl-96 ml-96'>
