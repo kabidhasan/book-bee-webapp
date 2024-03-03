@@ -10,7 +10,10 @@ function MainSection() {
 					BookBee is a Dynamic Book Exchange Platform. Discover, Exchange, and
 					Dive into a World of Books.
 				</div>
-				<Button text='Exchange Now' style='text-2xl h-20 mt-16 bg-sec' />
+				<Button
+					text='Exchange Now'
+					style='text-2xl h-20 mt-16 bg-sec text-ter'
+				/>
 			</div>
 			<img src='/bb.svg' className='h-2/3' />
 		</>

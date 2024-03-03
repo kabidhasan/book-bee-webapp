@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 function LoginPage() {
 	return (
-		<div className='hero min-h-screen flex-col justify-center bg-blue-gray-900'>
+		<div className='hero min-h-screen flex-col justify-center bg-pri'>
 			<div className='hero-content flex-col justify-center'>
 				<img src='/book.png' width={90} height={90} className='pb-6' />
 				<h1 className='text-3xl text-center font-medium text-teal-400 px-8'>

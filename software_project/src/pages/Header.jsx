@@ -12,15 +12,15 @@ function Header() {
 					Book Bee
 				</Link>
 			</div>
-			<ul className='flex gap-5'>
+			<ul className='flex gap-5 justify-center items-center'>
 				<li>
 					<Link to='/login'>
-						<Button text='Login' style='px-8 bg-sec' />
+						<Button text='Login' style='px-8 bg-sec text-ter' />
 					</Link>
 				</li>
 				<li>
 					<Link to='/signup'>
-						<Button text='Signup' style='px-8 border-2 border-sec' />
+						<Button text='Sign Up' style='px-8 border-2 border-sec text-sec' />
 					</Link>
 				</li>
 				{/* <li>
