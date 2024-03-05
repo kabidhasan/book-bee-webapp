@@ -15,12 +15,15 @@ function Header() {
 			<ul className='flex gap-5 justify-center items-center'>
 				<li>
 					<Link to='/login'>
-						<Button text='Login' style='px-8 bg-sec text-ter' />
+						<Button text='Login' style='px-8 bg-sec text-ter font-bold' />
 					</Link>
 				</li>
 				<li>
 					<Link to='/signup'>
-						<Button text='Sign Up' style='px-8 border-2 border-sec text-sec' />
+						<Button
+							text='Sign Up'
+							style='px-8 border-2 border-sec text-sec font-bold'
+						/>
 					</Link>
 				</li>
 				{/* <li>

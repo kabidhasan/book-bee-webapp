@@ -12,7 +12,7 @@ function MainSection() {
 				</div>
 				<Button
 					text='Exchange Now'
-					style='text-2xl h-20 mt-16 bg-sec text-ter'
+					style='text-2xl h-20 mt-16 bg-sec text-ter font-bold'
 				/>
 			</div>
 			<img src='/bb.svg' className='h-2/3' />
