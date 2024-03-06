@@ -1,11 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import Footer from "./pages/Footer";
-import Header from "./pages/Header";
+import LoginLayout from "./components/layouts/LoginLayout";
+import SignupLayout from "./components/layouts/SignupLayout";
 import Homepage from "./pages/Homepage";
-import LandingPage from "./pages/LandingPage";
 import Layout from "./pages/Layout";
-import LoginPage from "./pages/LoginPage";
-import Signup from "./pages/Signup";
 
 function App() {
 	return (
@@ -13,8 +10,8 @@ function App() {
 			{/* <Header /> */}
 			<Routes>
 				<Route path='/' element={<Layout />} />
-				<Route path='/login' element={<LoginPage />} />
-				<Route path='/signup' element={<Signup />} />
+				<Route path='/login' element={<LoginLayout />} />
+				<Route path='/signup' element={<SignupLayout />} />
 				<Route path='/home' element={<Homepage />} />
 				{/* 
 					TODO

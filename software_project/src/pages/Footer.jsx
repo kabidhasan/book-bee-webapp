@@ -1,6 +1,6 @@
 function Footer() {
 	return (
-		<footer className='footer pl-32 pb-10 bg-gradient-to-b from-pri to-teal-800 ext-neutral-content'>
+		<footer className='footer flex justify-between  md:px-28 md:pb-10 bg-gradient-to-b from-pri to-teal-800 ext-neutral-content'>
 			<aside>
 				<img src='/book.png' height={50} width={50} />
 				<p>
@@ -9,7 +9,7 @@ function Footer() {
 					Kabid, Ataur, Nazif & Mehedi.
 				</p>
 			</aside>
-			<nav className='pl-96 ml-96'>
+			<nav className=''>
 				<header className='footer-title'>Social</header>
 				<div className='grid grid-flow-col gap-5'>
 					<a>

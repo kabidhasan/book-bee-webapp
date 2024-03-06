@@ -7,8 +7,8 @@ function Button({ text, style }) {
 			before:absolute before:h-0 before:w-0 
 			before:rounded-full before:bg-orange-600
 			before:duration-700 before:ease-out 
-			 hover:before:h-56
-			hover:before:w-56`}
+			hover:before:h-32
+			hover:before:w-72`}
 		>
 			<h1 className='relative z-15'>{text}</h1>
 		</div>
