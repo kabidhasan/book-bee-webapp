@@ -32,11 +32,11 @@ function LoginForm() {
 						required
 					/>
 				</div>
-				<div className='form-control mt-12 '>
+				<div className='form-control mt-12 m-auto w-fit'>
 					<Link to='/home'>
 						<Button
 							text='Login'
-							style='bg-sec text-white text-2xl font-medium w-fit h-20 m-auto px-20'
+							style='bg-sec text-white text-2xl font-medium w-fit h-20  px-20'
 						/>
 					</Link>
 				</div>
