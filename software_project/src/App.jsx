@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+import DashboardLayout from "./components/layouts/DashboardLayout";
 import LoginLayout from "./components/layouts/LoginLayout";
 import SignupLayout from "./components/layouts/SignupLayout";
-import Homepage from "./pages/Homepage";
 import Layout from "./pages/Layout";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 				<Route path='/' element={<Layout />} />
 				<Route path='/login' element={<LoginLayout />} />
 				<Route path='/signup' element={<SignupLayout />} />
-				<Route path='/home' element={<Homepage />} />
+				<Route path='/home' element={<DashboardLayout />} />
 				{/* 
 					TODO
 					About us Page.

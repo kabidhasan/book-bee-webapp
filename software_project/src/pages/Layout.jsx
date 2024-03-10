@@ -11,7 +11,7 @@ function Layout() {
 			<div className='flex flex-col md:flex-row justify-evenly items-center flex-grow bg-pri w-dvw'>
 				<MainSection />
 			</div>
-			<div className='bg-pri w-dvw h-1/8 text-xl text-white font-play'>
+			<div className='bg-pri w-dvw h-1/8 text-xl'>
 				<Footer />
 			</div>
 		</div>
