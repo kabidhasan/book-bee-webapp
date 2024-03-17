@@ -4,10 +4,10 @@ const app = express();
 const { PORT, CLIENT_URL } = require("./constants");
 const authRoutes = require("./routes/auth");
 const orderRoutes = require("./routes/order")
-
-const userRoutes = require("./routes/user");
+const userRoutes = require("./routes/user")
 const adminRoutes = require("./routes/admin");
 const itemsRoutes = require("./routes/items");
+const bookRoutes = require("./routes/book")
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const passport = require("passport");
@@ -20,9 +20,8 @@ app.use(cookieParser());
 //app.use(cors({ credentials: true }));
 app.use(passport.initialize());
 app.use("/auth/", authRoutes);
-app.use("/ecom/", orderRoutes);
-app.use("/ecom/", userRoutes);
-app.use("/ecom/", itemsRoutes);
+app.use("/user/", userRoutes);
+app.use("/book/", bookRoutes);
 app.use("/admin/", adminRoutes);
 
 

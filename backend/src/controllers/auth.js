@@ -18,21 +18,27 @@ exports.getUsers = async (req, res) => {
 
 exports.register = async (req, res) => {
   try {
-    const { email, password, location, name } = req.body;
+    const { email, password,  name } = req.body;
     const hashedPassword = await hash(password, 10);
 
     // Use the 'users' collection
     const usersCollection = client.db().collection("users");
+    const userDetailsCollection = client.db().collection("userDetails");
 
     // Insert user information
     const result = await usersCollection.insertOne({
       email,
       name,
-      password: hashedPassword,
-      location,
+      password: hashedPassword
+      
+     
     });
+    const userDetailsResult = await userDetailsCollection.insertOne({
+      userId: result.insertedId,
+      isVerified: false
+    })
 
-    console.log(result)
+    console.log(result.insertedId)
 
     
       return res.status(201).json({
