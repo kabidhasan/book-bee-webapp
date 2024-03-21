@@ -3,6 +3,7 @@ import Footer from "../../pages/Footer";
 import Home from "../../pages/Home";
 import Profile from "../../pages/Profile";
 import Navbar from "../ui/Navbar";
+import { Outlet } from "react-router-dom";
 
 const user = {
 	name: "John Doe",
@@ -18,12 +19,12 @@ const user = {
 function DashboardLayout() {
 	return (
 		<>
-			<div className='w-dvw h-dvh bg-pri px-60'>
+			<div className='container mx-auto mb-auto bg-pri'>
 				<DashHeader />
 				<Navbar />
 				<main className='w-full h-auto flex divide-x-2 divide-black/50'>
-					<div className='w-4/6 p-4 bg-red-700'>
-						<Home user={user} />
+					<div className='w-4/6 p-4 flex flex-col justify-center items-center'>
+						<Outlet />
 					</div>
 					<div className='w-2/6 p-4'>
 						<Profile user={user} />
