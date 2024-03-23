@@ -23,10 +23,10 @@ function DashboardLayout() {
 				<DashHeader />
 				<Navbar />
 				<main className='w-full h-auto flex divide-x-2 divide-black/50'>
-					<div className='w-4/6 p-4 flex flex-col justify-center items-center'>
+					<div className='w-4/6 p-4 pl-0 flex flex-col justify-center items-center'>
 						<Outlet />
 					</div>
-					<div className='w-2/6 p-4'>
+					<div className='w-2/6 p-4 pr-0'>
 						<Profile user={user} />
 					</div>
 				</main>

@@ -6,6 +6,8 @@ import Layout from "./pages/Layout";
 import AddBookForm from "./components/ui/AddBookForm"
 import BookList from "./components/ui/BookList";
 import NotificationList from "./components/ui/NotificationList";
+import RequestBook from "./components/ui/RequestBook";
+import MessageList from "./components/ui/MessageList";
 
 function App() {
 	return (
@@ -18,6 +20,8 @@ function App() {
 					<Route path='addbook' element={<AddBookForm />}/>
 					<Route path='findbook' element={<BookList/>} />
 					<Route path='notifications' element={<NotificationList />} />
+					<Route path='viewbook/:id' element={<RequestBook />} />
+					<Route path='messages' element={<MessageList />} />
 				</Route>
 				<Route path='/*' element={<h1>404 ERORR</h1>} />
 				{/* 
