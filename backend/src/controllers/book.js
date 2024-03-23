@@ -1,15 +1,24 @@
 const client = require("../db");
 const { ObjectId } = require("mongodb");
+const { uploadToFirebase } = require("../firebase-app/firebase");
 
 exports.addBook = async (req, res) => {
   const bookData = req.body;
 
+  // Access uploaded image file from req.file
+  const imageFile = req.file;
+  const url = await uploadToFirebase(imageFile)
+  console.log(url)
   const booksCollection = client.db().collection("books");
-
+  // booksCollection.deleteMany({})
   try {
+    // console.log(req)
+    // // console.log(`req.body: ${ req.body }`)
+    // console.log(bookData)
+    // console.log(textData.name)
     // Insert the book data into the database
     // credit, no.of exchnage =0, no. of expectations=0 userId from localStorage
-    const result = await booksCollection.insertOne(bookData);
+    const result = await booksCollection.insertOne({...bookData, "image": url});
     console.log(result);
     if (result.acknowledged) {
       res

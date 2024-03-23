@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SignupForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({});
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -13,12 +16,28 @@ function SignupForm() {
   const handleSubmit = async () => {
     console.log("submitting");
     await axios
-      .post("http://localhost:8000/auth/register", formData)
-      .then((res) => console.log(res))
-      .catch((error) => console.error(error));
+      .post("http://20.244.96.143:3000/auth/register", formData)
+      .then((res) => {
+        console.log(res);
+        if (res.status == 201) {
+          navigate("/login");
+        } else {
+          notifyUnknownError();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        notifyUnknownError();
+      });
+  };
+  const notifyUnknownError = () => {
+    toast.error(
+      "An unknown error occured. Please try again after a few minutes. "
+    );
   };
   return (
     <>
+      <ToastContainer autoClose={3000} position="bottom-right"></ToastContainer>
       <div className="font-pt text-white text-4xl drop-shadow-sm font-semibold">
         WELCOME TO BOOKBEE
       </div>

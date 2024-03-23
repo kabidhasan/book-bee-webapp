@@ -2,14 +2,20 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function LoginForm({ notifyInvalidCredentials }) {
+function LoginForm() {
   const navigate = useNavigate();
+  const notifyInvalidCredentials = () => {
+    console.log("notify");
+    toast.error("Invalid Credentials");
+  };
   const handleLogin = async (event) => {
     console.log(email);
     console.log(password);
     await axios
-      .post("http://localhost:8000/auth/login", {
+      .post("http://20.244.96.143:3000/auth/login", {
         email: email,
         password: password,
       })
@@ -27,10 +33,12 @@ function LoginForm({ notifyInvalidCredentials }) {
         console.log(error);
       });
   };
+
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   return (
     <>
+       <ToastContainer autoClose={2000} position="bottom-right" />
       <div className="font-pt text-white text-4xl drop-shadow-sm font-semibold">
         WELCOME TO BOOKBEE
       </div>
