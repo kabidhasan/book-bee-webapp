@@ -6,7 +6,7 @@ const SignUpForm = () => {
 					WELCOME TO BOOKBEE
 				</h2>
 				<p className='text-gray-600 mb-6 text-center'>
-					Register for your account
+					Registerd for your account
 				</p>
 				<div className='mb-4'>
 					<label htmlFor='name' className='block text-gray-700 font-bold mb-2'>
