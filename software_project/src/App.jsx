@@ -5,6 +5,7 @@ import SignupLayout from "./components/layouts/SignupLayout";
 import Layout from "./pages/Layout";
 import AddBookForm from "./components/ui/AddBookForm"
 import BookList from "./components/ui/BookList";
+import NotificationList from "./components/ui/NotificationList";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path='/home' element={<DashboardLayout />}>
 					<Route path='addbook' element={<AddBookForm />}/>
 					<Route path='findbook' element={<BookList/>} />
+					<Route path='notifications' element={<NotificationList />} />
 				</Route>
 				<Route path='/*' element={<h1>404 ERORR</h1>} />
 				{/* 
