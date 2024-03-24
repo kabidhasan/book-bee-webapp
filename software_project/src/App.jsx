@@ -8,6 +8,7 @@ import BookList from "./components/ui/BookList";
 import NotificationList from "./components/ui/NotificationList";
 import RequestBook from "./components/ui/RequestBook";
 import MessageList from "./components/ui/MessageList";
+import Home from "./pages/Home";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Route path='/login' element={<LoginLayout />} />
 				<Route path='/signup' element={<SignupLayout />} />
 				<Route path='/home' element={<DashboardLayout />}>
+					<Route path='' element={<Home />} />
 					<Route path='addbook' element={<AddBookForm />}/>
 					<Route path='findbook' element={<BookList/>} />
 					<Route path='notifications' element={<NotificationList />} />
