@@ -28,7 +28,7 @@ export default withMT({
 				xl: ["20px", "30px"],
 			},
 		},
-		
+
 	},
 	plugins: [require("daisyui")],
 });
