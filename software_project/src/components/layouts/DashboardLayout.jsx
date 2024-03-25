@@ -4,6 +4,7 @@ import Home from "../../pages/Home";
 import Profile from "../../pages/Profile";
 import Navbar from "../ui/Navbar";
 import { Outlet } from "react-router-dom";
+import TopContributors from "../ui/TopContributors";
 
 const user = {
 	name: "John Doe",
@@ -23,11 +24,12 @@ function DashboardLayout() {
 				<DashHeader />
 				<Navbar />
 				<main className='w-full h-auto flex divide-x-2 divide-black/50'>
-					<div className='w-4/6 p-4 pl-0 flex flex-col justify-center items-center'>
+					<div className='w-4/6 p-4 pl-0 flex flex-col justify-start items-center'>
 						<Outlet />
 					</div>
 					<div className='w-2/6 p-4 pr-0'>
 						<Profile user={user} />
+						<TopContributors />
 					</div>
 				</main>
 			</div>
