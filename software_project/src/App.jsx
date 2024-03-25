@@ -10,6 +10,8 @@ import RequestBook from "./components/ui/RequestBook";
 import MessageList from "./components/ui/MessageList";
 import Home from "./pages/Home";
 import Requests from "./components/ui/Requests";
+import History from "./components/ui/History";
+import ProfileUpdate from "./components/ui/ProfileUpdate";
 
 function App() {
 	return (
@@ -26,6 +28,8 @@ function App() {
 					<Route path='viewbook/:id' element={<RequestBook />} />
 					<Route path='messages' element={<MessageList />} />
 					<Route path='requests' element={<Requests/>} />
+					<Route path='history' element= {<History />} />
+					<Route path='profile' element={<ProfileUpdate />} />
 				</Route>
 				<Route path='/*' element={<div className="flex flex-col justify-center  h-dvh item-center"><h1 className="text-6xl text-orange-400 text-center">404 ERORR</h1></div>} />
 				{/* 

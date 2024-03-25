@@ -19,7 +19,7 @@ function DashHeader() {
 					</Link>
 				</li>
 				<li>
-					<Link to='/Profile'>
+					<Link to='profile'>
 						<Button
 							text='Profile'
 							style='px-8 border-2 border-sec text-ter bg-sec font-bold'

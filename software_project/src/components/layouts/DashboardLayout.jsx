@@ -7,12 +7,12 @@ import { Outlet } from "react-router-dom";
 import TopContributors from "../ui/TopContributors";
 
 const user = {
-	name: "John Doe",
-	email: "random@gmail.com",
+	name: "Adnan Chowdhury",
+	email: "helloworld@gmail.com",
 	imageUrl:
 		"https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg",
-	bio: "I am a software developer",
-	location: "Lagos, Nigeria",
+	bio: "I am a software developer. I love tutorial books.",
+	location: "Akhalia, Sylhet, Bangladesh",
 	joined: "March 2021",
 	points: 100,
 };
