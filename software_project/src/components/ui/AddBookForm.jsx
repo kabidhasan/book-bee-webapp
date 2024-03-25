@@ -54,7 +54,7 @@ function AddBookForm() {
 		);
 	};
 	return (
-		<div className='border border-black w-full flex flex-col justify-center items-center rounded-sm'>
+		<div className='border-2 border-black w-full flex flex-col justify-center items-center rounded-sm'>
 			<ToastContainer position="bottom-right" autoClose={3000}></ToastContainer>
 			<div className="font-pt text-white text-3xl drop-shadow-sm font-semibold">
 				ADD A BOOK TO SHARE

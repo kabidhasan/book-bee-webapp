@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 function Profile({ user }) {
 	return (
 		<>
-			<ul className='flex flex-col  justify-start items-center font-sans text-white text-xl font-medium'>
+			<ul className='flex flex-col  justify-start items-center font-sans text-white text-xl font-medium border-2 border-black px-2 text-center'>
 				<li>
 					<img
 						src={user.imageUrl}
 						alt='profile picture'
-						className='border-2 border-black rounded-sm p-1'
+						className='rounded-sm p-1'
 					/>
 				</li>
 				<li>

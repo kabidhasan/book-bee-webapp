@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <ul className="h-14 grid grid-cols-6 font-pt  text-black border-x border-y bg-prilight border-black w-full my-2 shadow-md ">
+    <ul className="h-14 grid grid-cols-7 font-pt  text-black border-x border-y bg-prilight border-black w-full my-2 shadow-md ">
       <Link to="" >
         <Button
           text="Home"
@@ -13,6 +13,12 @@ function Navbar() {
       <Link to="requests">
         <Button
           text="Requests"
+          style="h-full text-xl border-x border-black font-normal w-full"
+        />
+      </Link>
+      <Link to="history">
+        <Button
+          text="History"
           style="h-full text-xl border-x border-black font-normal w-full"
         />
       </Link>
