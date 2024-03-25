@@ -7,8 +7,8 @@ exports.addBook = async (req, res) => {
 
   // Access uploaded image file from req.file
   const imageFile = req.file;
-  const url = await uploadToFirebase(imageFile)
-  console.log(url)
+  const url = await uploadToFirebase(imageFile);
+  console.log(url);
   const booksCollection = client.db().collection("books");
   // booksCollection.deleteMany({})
   try {
@@ -18,7 +18,7 @@ exports.addBook = async (req, res) => {
     // console.log(textData.name)
     // Insert the book data into the database
     // credit, no.of exchnage =0, no. of expectations=0 userId from localStorage
-    const result = await booksCollection.insertOne({...bookData, "image": url});
+    const result = await booksCollection.insertOne({ ...bookData, image: url });
     console.log(result);
     if (result.acknowledged) {
       res
@@ -47,24 +47,56 @@ exports.getAllBooks = async (req, res) => {
   }
 };
 
+exports.getBookById = async (req, res) => {
+  const { id } = req.params; // Assuming the ID is passed as a URL parameter
+
+  const booksCollection = client.db().collection("books");
+
+  try {
+    // Convert the ID string to ObjectId
+    const bookId = new ObjectId(id);
+
+    // Find the book by ID in the database
+    const book = await booksCollection.findOne({ _id: bookId });
+
+    if (!book) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Book not found" });
+    }
+
+    res.status(200).json({ success: true, book });
+  } catch (error) {
+    console.error("Error fetching book:", error);
+    res.status(500).json({ success: false, message: "Failed to fetch book" });
+  }
+};
+
 exports.requestBook = async (req, res) => {
   let requestBookData = req.body;
   const booksCollection = client.db().collection("books");
   const exchangeCollection = client.db().collection("exchange");
   console.log(requestBookData);
-  const bookId = new ObjectId(requestBookData.bookId);
+  requestBookData["bookId"] = requestBookData["_id"];
+  delete requestBookData["_id"];
+  console.log(requestBookData);
+
+  const exchangeData = {
+    contributor: requestBookData.contributor,
+    benificiary: requestBookData.benificiary,
+    bookId: requestBookData.bookId,
+  };
+  console.log(exchangeData);
+  // const bookId = new ObjectId(requestBookData.bookId);
 
   try {
     // Insert the book request data into the exchange collection
-    const bookResult = await booksCollection.findOne(bookId);
-    const contributorId = bookResult["userId"];
-    console.log("========================");
-    console.log(contributorId);
-    requestBookData.contributorId = contributorId;
-    const result = await exchangeCollection.insertOne({
-      ...requestBookData,
-      contributorId,
-    });
+    // const bookResult = await booksCollection.findOne(bookId);
+    // const contributorId = bookResult["userId"];
+    // console.log("========================");
+    // console.log(contributorId);
+    // requestBookData.contributorId = contributorId;
+    const result = await exchangeCollection.insertOne(exchangeData);
     console.log(result);
     if (result.acknowledged) {
       res.status(200).json({

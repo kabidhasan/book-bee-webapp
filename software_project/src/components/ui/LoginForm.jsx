@@ -20,9 +20,10 @@ function LoginForm() {
         password: password,
       })
       .then(function (response) {
-        console.log(response.status);
+        console.log(response);
         if (response.status == 200) {
-          console.log("Coming Hoem");
+          console.log("Coming Home");
+          localStorage.setItem("userId", response.data.userId)
           navigate("/home");
         } else {
           notifyInvalidCredentials();

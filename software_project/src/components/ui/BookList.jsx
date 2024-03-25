@@ -8,7 +8,7 @@ function BookList() {
   useEffect(() => {
     axios
       .get("http://20.244.96.143:3000/book/getAllBooks")
-      .then((res) => setBookList(res.data.books));
+      .then((res) => setBookList(res.data.books.filter((book)=>book.contributor != localStorage.getItem("userId"))));
   }, []);
 
   return (

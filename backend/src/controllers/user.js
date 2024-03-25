@@ -49,3 +49,18 @@ exports.updateProfile = async (req, res) => {
       .json({ success: false, message: "Failed to update user profile" });
   }
 };
+
+exports.getUserByUserId = async (req, res) => {
+  try {
+    
+    const { userId } = req.params;
+    const userIdObj = new ObjectId(userId);
+    const userDetailsCollection = client.db().collection("users");
+    const result = await userDetailsCollection.findOne({ _id: userIdObj });
+    // console.log(result);
+    res.status(200).json(result)
+  } catch (error) {
+    res.status(500).json({error: error})
+  }
+  
+}

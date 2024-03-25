@@ -25,6 +25,7 @@ function AddBookForm() {
 		for (var key in formData) {
 			totalForm.append(key, formData[key]);
 		}
+		totalForm.append("contributor", localStorage.getItem("userId"))
 		console.log("submitting");
 		console.log(totalForm);
 		await axios

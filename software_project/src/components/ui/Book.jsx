@@ -2,6 +2,7 @@ import React from 'react'
 import Button from './Button'
 import { Link } from 'react-router-dom'
 
+
 function Book({ book }) {
   return (
     <div className='flex flex-col justify-center items-center'>
