@@ -4,7 +4,7 @@ function MainSection() {
 	return (
 		<>
 			<div className='h-96 md:w-2/5'>
-				<div className='text-9xl font-play font-bold text-white first-letter:text-orange-600'>
+				<div className='text-7xl font-play font-bold text-white first-letter:text-orange-600'>
 					Book Bee
 				</div>
 				<div className='text-2xl font-pt text-ter'>

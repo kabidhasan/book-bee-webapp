@@ -37,66 +37,66 @@ function SignupForm() {
   };
   return (
     <>
-      <ToastContainer autoClose={3000} position="bottom-right"></ToastContainer>
-      <div className="font-pt text-white text-4xl drop-shadow-sm font-semibold">
-        WELCOME TO BOOKBEE
+      <ToastContainer autoClose={3000} position="bottom-left"></ToastContainer>
+      <div className="font-pt text-white text-2xl drop-shadow-sm font-semibold">
+        JOIN BOOKBEE
       </div>
-      <div className="font-pt text-ter text-2xl">Register for your Account</div>
-      <form className="w-full m-10 px-16" onChange={handleChange}>
+      <div className="font-pt text-ter text-xl">Register for your Account</div>
+      <form className="w-full m-5 px-10" onChange={handleChange}>
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-pt font-bold text-xl text-white">
+            <span className="label-text font-pt font-bold text-lg text-white">
               Email Address
             </span>
           </label>
           <input
             type="email"
             name="email"
-            className="input-success input-lg font-pt h-14 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
+            className="input-success input-md  font-pt h-11 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
             required
           />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-pt font-bold text-xl text-white">
+            <span className="label-text font-pt font-bold text-lg text-white">
               Full Name
             </span>
           </label>
           <input
             type="name"
             name="name"
-            className="input-success input-lg font-pt h-14 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
+            className="input-success input-md  font-pt h-11 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
             required
           />
         </div>
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-pt font-bold text-xl text-white">
+            <span className="label-text font-pt font-bold text-lg text-white">
               Password
             </span>
           </label>
           <input
             type="password"
             name="password"
-            className="input-success input-lg font-pt h-14 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
+            className="input-success input-md  font-pt h-11 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
             required
           />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-pt font-bold text-xl text-white">
+            <span className="label-text font-pt font-bold text-lg text-white">
               Confirm Password
             </span>
           </label>
           <input
             type="password"
             name="confirmedPassword"
-            className="input-success input-lg font-pt h-14 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
+            className="input-success input-md  font-pt h-11 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
             required
           />
         </div>
-        <div className="form-control font-play text-ter text-xl mt-4 justify-between items-center">
+        <div className="form-control font-play text-ter text-sm mt-4 justify-between items-center">
           <center>
             By signing up for an account, I agree with BookBee’s
             <b className="text-white"> Terms of Use</b> and{" "}
@@ -104,14 +104,14 @@ function SignupForm() {
           </center>
         </div>
 
-        <div className="form-control mt-9 " onClick={handleSubmit}>
+        <div className="form-control mt-5 " onClick={handleSubmit}>
           <Button
             text="Sign Up"
-            style="bg-sec text-white text-2xl font-medium w-fit h-20 m-auto px-20"
+            style="bg-sec text-white text-xl font-medium w-fit h-12 m-auto px-12"
           />
         </div>
       </form>
-      <div className="text-gray-400 font-pt text-xl">
+      <div className="text-gray-400 font-pt text-lg">
         Already have an account?
         <Link
           to="/login"
