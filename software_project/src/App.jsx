@@ -9,10 +9,11 @@ import NotificationList from "./components/ui/NotificationList";
 import RequestBook from "./components/ui/RequestBook";
 import MessageList from "./components/ui/MessageList";
 import Home from "./pages/Home";
+import Requests from "./components/ui/Requests";
 
 function App() {
 	return (
-		<div className="bg-pri flex flex-col min-h-dvh ">
+		<div className="w-dvw bg-pri min-h-dvh">
 			<Routes>
 				<Route path='/' element={<Layout />} />
 				<Route path='/login' element={<LoginLayout />} />
@@ -24,8 +25,9 @@ function App() {
 					<Route path='notifications' element={<NotificationList />} />
 					<Route path='viewbook/:id' element={<RequestBook />} />
 					<Route path='messages' element={<MessageList />} />
+					<Route path='requests' element={<Requests/>} />
 				</Route>
-				<Route path='/*' element={<h1>404 ERORR</h1>} />
+				<Route path='/*' element={<div className="flex flex-col justify-center  h-dvh item-center"><h1 className="text-6xl text-orange-400 text-center">404 ERORR</h1></div>} />
 				{/* 
 					TODO
 					About us Page.

@@ -1,6 +1,6 @@
 function Footer() {
 	return (
-		<footer className='footer flex justify-between  md:px-28 md:pb-10 bg-gradient-to-b from-pri to-teal-800 ext-neutral-content font-pt text-white'>
+		<footer className='footer flex justify-between  md:px-28 md:pb-10 bg-gradient-to-b from-pri to-bg-pri ext-neutral-content font-pt text-white'>
 			<aside>
 				<img src='/book.png' height={50} width={50} />
 				<p>

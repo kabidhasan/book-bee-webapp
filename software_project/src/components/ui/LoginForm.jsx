@@ -39,15 +39,15 @@ function LoginForm() {
   let [password, setPassword] = useState("");
   return (
     <>
-       <ToastContainer autoClose={2000} position="bottom-right" />
-      <div className="font-pt text-white text-4xl drop-shadow-sm font-semibold">
+       <ToastContainer autoClose={2000} position="bottom-left" />
+      <div className="font-pt text-white text-3xl drop-shadow-sm font-semibold">
         WELCOME TO BOOKBEE
       </div>
-      <div className="font-pt text-ter text-2xl">Login to your account</div>
+      <div className="font-pt text-ter text-xl">Login to your account</div>
       <form className="w-full m-10 px-16">
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-pt font-bold text-xl text-white">
+            <span className="label-text font-pt font-bold text-lg text-white">
               Email
             </span>
           </label>
@@ -63,7 +63,7 @@ function LoginForm() {
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-pt font-bold text-xl text-white">
+            <span className="label-text font-pt font-bold text-lg text-white">
               Password
             </span>
           </label>
@@ -81,13 +81,13 @@ function LoginForm() {
           <Button
             type="submit"
             text="Login"
-            style="bg-sec text-white text-2xl font-medium w-fit h-20  px-20"
+            style="bg-sec text-white text-xl font-medium w-fit h-12  px-12"
             onClickFunction={handleLogin}
           />
           {/* </Link> */}
         </div>
       </form>
-      <div className="text-gray-400 font-pt text-xl">
+      <div className="text-gray-400 font-pt text-lg">
         Don&#39;t have an account?
         <Link
           to="/signup"

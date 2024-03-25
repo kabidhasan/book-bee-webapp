@@ -10,9 +10,9 @@ function Navbar() {
           style="h-full text-xl border-x border-black font-normal w-full"
         />
        </Link>
-      <Link to="profile">
+      <Link to="requests">
         <Button
-          text="Profile"
+          text="Requests"
           style="h-full text-xl border-x border-black font-normal w-full"
         />
       </Link>
