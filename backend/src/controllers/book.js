@@ -120,7 +120,7 @@ exports.getAllRequestsByContributorId = async (req, res) => {
 
   try {
     const result = await exchangeCollection
-      .find({ contributorId: contributorId })
+      .find({ contributor: contributorId })
       .toArray();
 
     res.status(200).json({ success: true, requests: result });
@@ -165,7 +165,7 @@ exports.getAllRequestsByBenificiaryId = async (req, res) => {
   const { userId } = req.query;
   try {
     const exchangeCollection = client.db().collection("exchange");
-    const result = await exchangeCollection.find({ userId: userId }).toArray();
+    const result = await exchangeCollection.find({ benificiary: userId }).toArray();
     res.status(200).json({ success: true, requests: result });
   } catch (error) {
     console.error("Error fetching requests by benificiaryId:", error);
