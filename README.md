@@ -60,4 +60,8 @@ Now you can see the frontend is running below like this:<br>
 <br>
 
 The full project is now running on your local machine. <br>
-Happy Browsing!!!
+
+
+Now go to your favourite browser and open the link  http://localhost:5173/ .<br>
+You will see the landing page of this project like below:
+![Landing Page](img/landing_page.png)
