@@ -3,8 +3,7 @@
 
 ### How to start the project in your localhost-
 open up your terminal and write the below command:<br>
-<code>
-git init <br>
+<code>git init <br>
 git pull https://github.com/kabidhasan/book-bee-webapp.git
 </code>
 <br>
