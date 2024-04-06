@@ -199,10 +199,11 @@ function AddBookForm() {
 					</center>
 				</div> */}
 
-				<div className="form-control mt-9 " onClick={handleSubmit}>
-					<Button
-						text="Add Book"
-						style="bg-sec text-white text-2xl font-medium w-fit h-16 m-auto px-16"
+				<div className="form-control mt-9 " >
+					<input
+						value="Add Book"
+						type="submit"
+						className="bg-sec text-white text-2xl font-medium w-fit h-16 m-auto px-16"
 					/>
 				</div>
 			</form>
