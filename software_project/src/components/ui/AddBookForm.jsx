@@ -29,7 +29,7 @@ function AddBookForm() {
 		console.log("submitting");
 		console.log(totalForm);
 		await axios
-			.post("http://20.244.96.143:3000/book/addBook", totalForm, {
+			.post("http://localhost:3000/book/addBook", totalForm, {
 				headers: {
 					"Content-Type": "multipart/form-data",
 				},

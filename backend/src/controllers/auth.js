@@ -18,7 +18,48 @@ exports.getUsers = async (req, res) => {
 
 exports.register = async (req, res) => {
   try {
-    const { email, password,  name } = req.body;
+    const { email, password, confirmPassword, name } = req.body;
+
+    // Basic validation checks
+    if (!email || !password || !confirmPassword || !name) {
+      return res.status(400).json({
+        success: false,
+        msg: "All fields are required",
+      });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({
+        success: false,
+        msg: "Password should be at least 6 characters long",
+      });
+    }
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({
+        success: false,
+        msg: "Passwords do not match",
+      });
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        success: false,
+        msg: "Invalid email format",
+      });
+    }
+
+    // Check if the email already exists in the database
+    const userExists = await client.db().collection("users").findOne({ email });
+    if (userExists) {
+      return res.status(400).json({
+        success: false,
+        msg: "An account with this email already exists",
+      });
+    }
+
     const hashedPassword = await hash(password, 10);
 
     // Use the 'users' collection
@@ -29,25 +70,20 @@ exports.register = async (req, res) => {
     const result = await usersCollection.insertOne({
       email,
       name,
-      password: hashedPassword
-      
-     
+      password: hashedPassword,
     });
+
     const userDetailsResult = await userDetailsCollection.insertOne({
       userId: result.insertedId,
-      isVerified: false
-    })
+      isVerified: false,
+    });
 
-    console.log(result.insertedId)
+    console.log(result.insertedId);
 
-    
-      return res.status(201).json({
-        success: true,
-        msg: "User registration successful",
-      });
-   
-       
-   
+    return res.status(201).json({
+      success: true,
+      msg: "User registration successful",
+    });
   } catch (error) {
     console.error("Error during user registration:", error);
     res.status(500).json({

@@ -15,7 +15,7 @@ function LoginForm() {
     console.log(email);
     console.log(password);
     await axios
-      .post("http://20.244.96.143:3000/auth/login", {
+      .post("http://localhost:3000/auth/login", {
         email: email,
         password: password,
       })

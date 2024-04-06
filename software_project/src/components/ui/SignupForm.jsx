@@ -16,18 +16,24 @@ function SignupForm() {
   const handleSubmit = async () => {
     console.log("submitting");
     await axios
-      .post("http://20.244.96.143:3000/auth/register", formData)
+      .post("http://localhost:3000/auth/register", formData)
       .then((res) => {
         console.log(res);
-        if (res.status == 201) {
-          navigate("/login");
+        if (res.status === 201) {
+          toast.success("User registration successful", {
+            autoClose: 1000, // Close the toast after 1 second
+            onClose: () => navigate("/login"), // Navigate to login page after toast is closed
+          });
+        } else if (res.status === 400) {
+          toast.error("Bad request: " + res.data.msg); // Display the error message received from the server
         } else {
           notifyUnknownError();
         }
       })
       .catch((error) => {
         console.error(error);
-        notifyUnknownError();
+        toast.error("Bad request: " + error.response.data.msg);
+        // notifyUnknownError();
       });
   };
   const notifyUnknownError = () => {
@@ -91,7 +97,7 @@ function SignupForm() {
           </label>
           <input
             type="password"
-            name="confirmedPassword"
+            name="confirmPassword"
             className="input-success input-md  font-pt h-11 bg-prilight rounded-none text-white focus-within:outline-black focus-within:border-black focus:outline-none hover:border-black hover:border-2 focus:border-2"
             required
           />
