@@ -5,6 +5,7 @@ import Profile from "../../pages/Profile";
 import Navbar from "../ui/Navbar";
 import { Outlet } from "react-router-dom";
 import TopContributors from "../ui/TopContributors";
+import PermissionDenied from "../../pages/PermissionDenied";
 
 const user = {
 	name: "Adnan Chowdhury",
@@ -18,6 +19,12 @@ const user = {
 };
 
 function DashboardLayout() {
+	if (!localStorage.getItem("userId")) {
+		console.log()
+		return (
+			<PermissionDenied />
+		)
+	}
 	return (
 		<>
 			<div className='container mx-auto mb-auto bg-pri'>
