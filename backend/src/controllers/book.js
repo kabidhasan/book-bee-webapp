@@ -85,6 +85,12 @@ exports.requestBook = async (req, res) => {
     contributor: requestBookData.contributor,
     benificiary: requestBookData.benificiary,
     bookId: requestBookData.bookId,
+    "respondedByContributor": false,
+    "responseType": null,
+    "scheduleConfirmedByContributor": false,
+    "scheduledMeetUp": null, "exchangeVerifiedByBenificiary": false,
+    "exchangeVerifiedByContributor": false,
+    "scheduleConfirmationType": false
   };
   console.log(exchangeData);
   // const bookId = new ObjectId(requestBookData.bookId);

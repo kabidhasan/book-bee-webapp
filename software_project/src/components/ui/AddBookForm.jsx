@@ -17,7 +17,8 @@ function AddBookForm() {
 	const handleImageChange = (e) => {
 		setImageFile(e.target.files[0]);
 	};
-	const handleSubmit = async () => {
+	const handleSubmit = async (e) => {
+		e.preventDefault()
 		const totalForm = new FormData();
 		totalForm.append("image", imageFile);
 		// totalForm.append("textData", formData);
