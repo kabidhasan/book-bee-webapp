@@ -1,6 +1,5 @@
 import DashHeader from "../../pages/DashHeader";
 import Footer from "../../pages/Footer";
-import Home from "../../pages/Home";
 import Profile from "../../pages/Profile";
 import Navbar from "../ui/Navbar";
 import { Outlet } from "react-router-dom";
@@ -20,21 +19,19 @@ const user = {
 
 function DashboardLayout() {
 	if (!localStorage.getItem("userId")) {
-		console.log()
-		return (
-			<PermissionDenied />
-		)
+		console.log();
+		return <PermissionDenied />;
 	}
 	return (
 		<>
-			<div className='container mx-auto mb-auto bg-pri'>
+			<div className="container mx-auto mb-auto bg-pri">
 				<DashHeader />
 				<Navbar />
-				<main className='w-full h-auto flex divide-x-2 divide-black/50'>
-					<div className='w-4/6 p-4 pl-0 flex flex-col justify-start items-center'>
+				<main className="w-full h-auto flex divide-x-2 divide-black/50">
+					<div className="w-4/6 p-4 pl-0 flex flex-col justify-start items-center">
 						<Outlet />
 					</div>
-					<div className='w-2/6 p-4 pr-0'>
+					<div className="w-2/6 p-4 pr-0">
 						<Profile user={user} />
 						<TopContributors />
 					</div>
