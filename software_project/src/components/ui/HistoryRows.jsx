@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import HistoryAction from "./HistoryAction";
 
 const HistoryRows = ({ request }) => {
     console.log(request);
@@ -33,11 +34,10 @@ const HistoryRows = ({ request }) => {
           <td>
             {book.name}
             <br />
-            <span className="badge badge-ghost badge-sm">{book.author}</span>
+            <span className="badge badge-ghost badge-sm h-fit">{book.author}</span>
           </td>
           <th className="flex h-20 justify-center items-center gap-6">
-            <button className="btn btn-success btn-xs">RESPOND</button>
-            <button className="btn btn-error btn-xs ">IGNORE</button>
+            <HistoryAction request={request}></HistoryAction>
           </th>
         </tr>
       

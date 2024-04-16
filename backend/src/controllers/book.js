@@ -9,6 +9,7 @@ exports.addBook = async (req, res) => {
   const imageFile = req.file;
   const url = await uploadToFirebase(imageFile);
   console.log(url);
+  
   const booksCollection = client.db().collection("books");
   // booksCollection.deleteMany({})
   try {

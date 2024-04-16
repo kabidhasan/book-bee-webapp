@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 // let book = {"_id":"65febe5f047d5ce2932c9298","name":"Jibon O Rajnoitik Bastobota","image":"https://firebasestorage.googleapis.com/v0/b/book-bee-webapp-8708a.appspot.com/o/images%2F7b614cd3-f344-4b70-9b76-75da64a80eae.png?alt=media&token=610eaae1-619a-423a-b0c5-2d3e1d7b96e3","author":"Shahidul Zahir","publication":"Hakkani Publishers","genre":"Novel Political","language":"Bangla","price":"150","age":"60","condition":"A bit teared"};
 
 function RequestBook() {
+  const navigate = useNavigate()
   const handleRequest = () => {
-    axios.post("http://localhost:3000/book/requestBook", {...book, benificiary: localStorage.getItem("userId")}).then(res=>console.log(res));
+    axios.post("http://localhost:3000/book/requestBook", { ...book, benificiary: localStorage.getItem("userId") }).then(res => console.log(res));
+    navigate("/home/history")
   };
   const [book, setBook] = useState({});
   const [contributorName, setContributorName] = useState(``);

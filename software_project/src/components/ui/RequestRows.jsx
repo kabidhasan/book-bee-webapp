@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import RequestAction from "./RequestAction";
 
 const RequestRows = ({ request }) => {
+  const [render, setRender] = useState(false)
+  const props = { render, setRender, request };
     const { bookId, benificiary } = request
     console.log(benificiary)
     const [benificiaryObj, setBenificiaryObj] = useState({})
@@ -34,8 +37,7 @@ const RequestRows = ({ request }) => {
                 <span className="badge badge-ghost badge-sm">{book.author}</span>
         </td>
         <th className="flex h-20 justify-center items-center gap-6">
-          <button className="btn btn-success btn-xs">RESPOND</button>
-          <button className="btn btn-error btn-xs ">IGNORE</button>
+          <RequestAction request={request}></RequestAction>
         </th>
       </tr>
     );
