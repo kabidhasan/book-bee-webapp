@@ -1,29 +1,33 @@
-import React from 'react'
-import Message from './Message'
+import React from "react";
+import Message from "./Message";
 
 let messages = [
-    {
-        id: 1,
-        content: 'Hello, how are you?'
-    },
-    {
-        id: 2,
-        content: 'I am fine, thank you.'
-    },
-    {
-        id: 3,
-        content: 'Goodbye!'
-    }
-]
+	{
+		user: "Tamim",
+		content: "Hello",
+	},
+	{
+		user: "Kabid",
+		content: "Hi",
+	},
+	{
+		user: "Rahim",
+		content: "How are you?",
+	},
+];
 
 function MessageList() {
-  return (
-    <div className='border border-black w-full flex flex-col h-full justify-start items-start rounded-sm'>
-        {messages.map((message) => (
-            <Message key={message.id} content={message.content} />
-        ))}
-    </div>
-  )
+	return (
+		<div className="border-2 border-black w-full flex flex-col h-full justify-start items-start rounded-sm bg-prilight">
+			{messages.map((message) => (
+				<Message
+					key={message}
+					user={message.user}
+					content={message.content}
+				/>
+			))}
+		</div>
+	);
 }
 
-export default MessageList
+export default MessageList;

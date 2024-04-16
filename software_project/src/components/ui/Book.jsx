@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Book({ book }) {
 	return (
-		<div className="flex flex-col justify-center items-center">
+		<div className="flex flex-col justify-center items-center ">
 			<img
 				src={book.image}
 				alt={book.name}
