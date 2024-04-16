@@ -26,7 +26,7 @@ function BookList() {
 				className="w-full mb-5 h-10 bg-ter rounded-none text-black border-2 px-5 border-black"
 			/>
 
-			<div className="grid grid-cols-3 gap-6 border border-black p-5 rounded-sm">
+			<div className="grid grid-cols-3 gap-6 border-2 border-black p-5 rounded-sm bg-prilight">
 				{bookList.map((book) => (
 					<Book key={book.id} book={book}></Book>
 				))}

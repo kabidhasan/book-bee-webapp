@@ -31,7 +31,7 @@ function DashboardLayout() {
 					<div className="w-4/6 p-4 pl-0 flex flex-col justify-start items-center">
 						<Outlet />
 					</div>
-					<div className="w-2/6 p-4 pr-0">
+					<div className="w-2/6  p-4 pr-0">
 						<Profile user={user} />
 						<TopContributors />
 					</div>

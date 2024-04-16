@@ -21,10 +21,10 @@ function History() {
 
 	return (
     <>
-      <div className="overflow-x-auto w-full border border-black rounded-sm ">
+      <div className="overflow-x-auto w-full border-2 border-black rounded-sm bg-prilight ">
         <table className="table text-white text-lg">
           {/* head */}
-          <thead className="text-orange-400  text-xl text-center">
+          <thead className="text-black  text-xl text-center">
             <tr>
               <th>Contributor Name</th>
               <th>Book</th>
