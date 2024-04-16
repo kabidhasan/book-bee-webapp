@@ -1,8 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import RequestRows from "./RequestRows"
+
+export const RenderContext = createContext(null)
 function Requests() {
   const [requests, setRequests] = useState([]);
+  const [render, setRender] = useState(false);
   const fetchData = async () => {
     const res = await axios.get(
       `http://localhost:3000/book/getAllRequestByContributorId?contributorId=${localStorage.getItem(
@@ -12,7 +15,7 @@ function Requests() {
       await setRequests(res.data.requests)
       
   };
-  useEffect(() => {fetchData()}, []);
+  useEffect(() => {fetchData()}, [render]);
   return (
     <div className="overflow-x-auto w-full border border-black rounded-sm ">
       <table className="table text-white text-lg">
@@ -24,13 +27,14 @@ function Requests() {
             <th>Action</th>
           </tr>
         </thead>
-              <tbody>
-                  {requests.map(request => {
-                      
-                      return ( <RequestRows key={request._id} request={request}></RequestRows> );
-                  })}
-          
-          
+        <tbody>
+          <RenderContext.Provider value={{render, setRender}}>
+            {requests.map((request) => {
+              return (
+                <RequestRows key={request._id} request={request}></RequestRows>
+              );
+            })}
+          </RenderContext.Provider>
         </tbody>
       </table>
     </div>

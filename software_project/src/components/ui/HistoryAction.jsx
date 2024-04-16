@@ -1,6 +1,9 @@
 import axios from "axios";
+import { useContext } from "react";
+import { RenderContext } from "./History";
 
 const HistoryAction = ({ request }) => {
+  const {render,setRender} = useContext(RenderContext)
   console.log(request);
   const handleRequest = async (e) => {
     e.preventDefault();
@@ -12,6 +15,7 @@ const HistoryAction = ({ request }) => {
     );
     console.log(res);
     e.target.reset();
+    setRender(!render)
   };
 
   const formatTime = (timeString) => {
@@ -37,6 +41,7 @@ const HistoryAction = ({ request }) => {
       }
     );
     console.log(res);
+    setRender(!render);
   }
   if (
     request.exchangeVerifiedByBenificiary &&
@@ -70,13 +75,7 @@ const HistoryAction = ({ request }) => {
       </>
     );
   }
-  if (request.scheduleConfirmedByContributor) {
-    return (
-      <>
-        <div className="text-error">Schedule Was Rejected By Contributor</div>
-      </>
-    );
-  }
+  
   if (request.scheduledMeetUp) {
     return (
       <>
